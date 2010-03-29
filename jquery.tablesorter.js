@@ -668,7 +668,7 @@
 			this.isDigit = function(s,config) {
 				var DECIMAL = '\\' + config.decimal;
 				var exp = '/(^[+]?0(' + DECIMAL +'0+)?$)|(^([-+]?[1-9][0-9]*)$)|(^([-+]?((0?|[1-9][0-9]*)' + DECIMAL +'(0*[1-9][0-9]*)))$)|(^[-+]?[1-9]+[0-9]*' + DECIMAL +'0+$)/';
-				return RegExp(exp).test($.trim(s));
+				return (RegExp(exp).test($.trim(s)) || $.trim(s) == 0);
 			};
 			
 			this.clearTableBody = function(table) {
